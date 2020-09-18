@@ -18,6 +18,7 @@ public class Main {
         for(File f : files) {
             printFileInfo(f, input);
         }
+
         sc.close();
     }
 
