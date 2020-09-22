@@ -11,15 +11,16 @@ public class Main {
         String input = "";
         System.out.println("Enter a search term:");
         input = sc.nextLine();
-        //Get base directory
-        File directory = new File(".");
-        //Get list of files in base directory
-        File[] files = directory.listFiles();
-        for(File f : files) {
-            printFileInfo(f, input);
+        if(input.length() != 0) {
+            //Get base directory
+            File directory = new File(".");
+            printFileInfo(directory, input);
+
+            sc.close();
+        } else {
+            System.out.println("Search term must be at least one character");
         }
 
-        sc.close();
     }
 
     public static void printFileInfo(File file, String searchTerm) {
